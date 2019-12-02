@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sample.roombasics.MainActivity">
+
+    <ScrollView
+        android:id="@+id/sample_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/studentName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter student name"
+                android:textColorHint="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <EditText
+                android:id="@+id/studentCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter student course"
+                android:textColorHint="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/studentName" />
+
+            <EditText
+                android:id="@+id/studentAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter student age"
+                android:textColorHint="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/studentCourse" />
+            <TextView
+                android:id="@+id/database_data"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fontFamily="sans-serif-black"
+                android:hint="ggekgkfbdvdskdb"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                app:layout_constraintBottom_toTopOf="@id/add_student"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/studentAge"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/add_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="add_Student"
+                app:layout_constraintBottom_toTopOf="@id/delete_student"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/delete_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="delete student"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
