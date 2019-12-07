@@ -18,7 +18,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <EditText
                 android:id="@+id/studentName"
@@ -47,35 +47,126 @@
                 android:textColorHint="@color/colorPrimary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/studentCourse" />
+
             <TextView
                 android:id="@+id/database_data"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:hint="ggekgkfbdvdskdb"
                 android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent"
-                app:layout_constraintBottom_toTopOf="@id/add_student"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/studentAge"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@id/studentAge" />
+
+            <Button
+                android:id="@+id/goto_student_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="sans-serif-black"
+                android:text="student_list"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/database_data" />
+
 
             <Button
                 android:id="@+id/add_student"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="add_Student"
-                app:layout_constraintBottom_toTopOf="@id/delete_student"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/goto_student_list" />
+
+            <Button
+                android:id="@+id/retrieve_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="retrieve all student"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/add_student" />
+
 
             <Button
                 android:id="@+id/delete_student"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="delete student"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:text="delete a student"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/retrieve_student" />
+
+
+            <ScrollView
+                android:id="@+id/secondary_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/delete_student">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <EditText
+                        android:id="@+id/sport_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="circket"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <EditText
+                        android:id="@+id/achievement"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="gold_medal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sport_name" />
+
+
+                    <EditText
+                        android:id="@+id/sport_name_second"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="student age"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/achievement" />
+
+
+                    <EditText
+                        android:id="@+id/achievement2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="silver medal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sport_name_second" />
+
+
+                    <Button
+                        android:id="@+id/submit_room"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="submit sports details"
+                        android:textAllCaps="false"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/achievement2" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </ScrollView>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

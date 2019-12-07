@@ -8,7 +8,7 @@ public class StudentSingleton {
 
     private static StudentRoomInstace mStudentRoomInstance = null;
 
-    private static final String STUDENT_DB_NAME = "student_db";
+    private static final String STUDENT_DB_NAME = "student&sport_db";
 
     private StudentSingleton() {
     }

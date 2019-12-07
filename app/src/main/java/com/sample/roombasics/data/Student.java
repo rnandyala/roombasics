@@ -47,4 +47,11 @@ public class Student {
         this.name = name;
         this.course = course;
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "The students age is:" + studentId + ";\n" +
+                "his name is " + name + " " + "\n he has taken " + course + "\n";
+    }
 }
