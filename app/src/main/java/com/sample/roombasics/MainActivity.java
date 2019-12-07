@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private StudentPresenter mStudentPresenter;
 
-// messed up life with messed up tool
+// messed up life with messed up tooldf
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
