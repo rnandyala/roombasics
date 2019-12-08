@@ -10,31 +10,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sample.roombasics.SportsActivity;
 import com.sample.roomsampleapplication.R;
 
-public class StudentView extends RecyclerView.ViewHolder {
+class StudentView extends RecyclerView.ViewHolder {
 
-    public TextView mStudentName;
-    public TextView mStudentAge;
+    TextView mStudentName;
+    TextView mStudentAge;
 
 
-    public StudentView(@NonNull View itemView) {
+    StudentView(@NonNull View itemView) {
         super(itemView);
-        mStudentName = (TextView) itemView.findViewById(R.id.student_name);
-        mStudentAge = (TextView) itemView.findViewById(R.id.student_age);
-
-
+        mStudentName = itemView.findViewById(R.id.student_name);
+        mStudentAge = itemView.findViewById(R.id.student_age);
         itemView.setOnClickListener(
-
-                v ->{
-
+                v -> {
                     Intent mSportsDetails = new Intent(itemView.getContext(), SportsActivity.class);
-
-                    mSportsDetails.putExtra("studentage",mStudentAge.getText().toString());
-itemView.getContext().startActivity(mSportsDetails);
-
-                }
-
-        );
+                    mSportsDetails.putExtra("studentage", mStudentAge.getText().toString());
+                    itemView.getContext().startActivity(mSportsDetails);
+                });
     }
-
-
 }

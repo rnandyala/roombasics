@@ -16,30 +16,23 @@ import java.util.List;
 public class StudentAdapter extends RecyclerView.Adapter<StudentView> {
 
 
-    List<Student> mStudentList;
+    private List<Student> mStudentList;
 
     public StudentAdapter(List<Student> mArrayListOfStudents) {
         this.mStudentList = mArrayListOfStudents;
-
     }
 
     @NonNull
     @Override
     public StudentView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View listItem = layoutInflater.inflate(R.layout.student_view, parent, false);
-
-        StudentView mStudentView = new StudentView(listItem);
-        return mStudentView;
+        return new StudentView(listItem);
     }
 
     @Override
     public void onBindViewHolder(@NonNull StudentView holder, int position) {
-
         holder.mStudentName.setText(mStudentList.get(position).getName());
-
         holder.mStudentAge.setText(String.valueOf(mStudentList.get(position).getStudentId()));
     }
 

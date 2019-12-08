@@ -18,21 +18,15 @@ import com.sample.roomsampleapplication.R;
 import java.util.List;
 
 public class SportsActivity extends AppCompatActivity implements StudentDetailsPresenter.ISportsDetails {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sports);
-StudentDetailsPresenter mStudentDetailsPresenter = new StudentDetailsPresenter(this);
-mStudentDetailsPresenter.startBackgroundStudentList(getApplicationContext());
+        StudentDetailsPresenter mStudentDetailsPresenter = new StudentDetailsPresenter(this);
+        mStudentDetailsPresenter.startBackgroundStudentList(getApplicationContext());
     }
 
     @Override
     public void getSportsDetails(List<StudentSportsJoin> mSportsDetails) {
-
-
-
-
-
     }
 }

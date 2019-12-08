@@ -20,29 +20,21 @@ import com.sample.roomsampleapplication.R;
 import java.util.List;
 
 public class StudentActivity extends AppCompatActivity implements StudentListPresenter.IStudentList {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
-
         StudentListPresenter mStudentListPresenter = new StudentListPresenter(this);
-
         mStudentListPresenter.startBackgroundStudentList(getApplicationContext());
-
         List<Student> mStudentList = mStudentListPresenter.getmStudentList();
-
-
     }
 
     private void setRecyclerviewAdapter(List<Student> mStudentList) {
-
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview_student_list);
+        RecyclerView recyclerView = findViewById(R.id.recyclerview_student_list);
         StudentAdapter adapter = new StudentAdapter(mStudentList);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
     }
 
     @Override

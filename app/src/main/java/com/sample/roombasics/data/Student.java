@@ -12,17 +12,14 @@ public class Student {
     @NonNull
     @PrimaryKey
     private long studentId;
-
     private String name;
-
     private String course;
-
 
     public long getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(long studentId) {
+    void setStudentId(long studentId) {
         this.studentId = studentId;
     }
 
@@ -30,15 +27,15 @@ public class Student {
         return name;
     }
 
-    public void setName(String name) {
+    void setName(String name) {
         this.name = name;
     }
 
-    public String getCourse() {
+    String getCourse() {
         return course;
     }
 
-    public void setCourse(String course) {
+    void setCourse(String course) {
         this.course = course;
     }
 

@@ -16,34 +16,19 @@ import com.sample.roombasics.presenter.StudentPresenter;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     private StudentPresenter mStudentPresenter;
-
     private Button mButton;
-
     private Button mRetrieveStudents;
-
     private Button mDeleteStudent;
-
     private EditText mStudentAge;
-
     private EditText mStudentCourse;
-
     private EditText mStudentName;
-
     private TextView mShowData;
-
     private Button mNextActivity;
-
     private Button mSubmitSports;
-
-
     private EditText mSportsName;
-
     private EditText mAchievement;
-
     private EditText mChildStudentId;
-
     private EditText mAchievement2;
 
 
@@ -62,9 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void retrieveStudents() {
         mRetrieveStudents.setOnClickListener(
-                v -> {
-                    mShowData.setText(getStudentListData().toString());
-                });
+                v -> mShowData.setText(getStudentListData().toString()));
+
     }
 
     private void setAllViewId() {
@@ -79,26 +63,11 @@ public class MainActivity extends AppCompatActivity {
         mSubmitSports = findViewById(R.id.submit_room);
 
         mNextActivity.setOnClickListener(
-
-                v -> {
-
-
-                    startActivity(new Intent(this, StudentActivity.class));
-
-                }
-
-
-        );
-
+                v -> startActivity(new Intent(this, StudentActivity.class)));
         mSportsName = findViewById(R.id.sport_name);
-
         mAchievement = findViewById(R.id.achievement);
-
         mChildStudentId = findViewById(R.id.sport_name_second);
-
         mAchievement = findViewById(R.id.achievement2);
-
-
     }
 
     private void addStudentRecordToDataBase() {
@@ -108,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                     String studentAge = mStudentAge.getText().toString();
                     Integer mStudentAgeInt = Integer.parseInt(studentAge);
                     String studentCourse = mStudentCourse.getText().toString();
-
                     mStudentPresenter.setStudentData(new Student(mStudentAgeInt, studentName, studentCourse));
                 }
         );
@@ -116,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void deleteStudentRecordFromDataBase() {
-        // To delete each record use below code
+        // To delete specific record use below code
 
-//
+
 //        mDeleteStudent.setOnClickListener(
 //
 //                v -> {
@@ -130,56 +98,32 @@ public class MainActivity extends AppCompatActivity {
 //                    mStudentPresenter.deleteStudentRecord(new Student(mStudentAgeInt, studentName, studentCourse));
 //
 //                }
-
-
 // To delete all records
 
         mDeleteStudent.setOnClickListener(
-                v -> {
-
-                    mStudentPresenter.deleteStudentRecord(null);
-
-                });
-
+                v -> mStudentPresenter.deleteStudentRecord(null));
     }
 
 
     private void submitDataToRoom() {
-
         mSubmitSports.setOnClickListener(
-
                 v -> {
-
                     String mSportName = mSportsName.getText().toString();
-
                     String mSportAchievement = mAchievement.getText().toString();
-
-                    int mSportsManAge =Integer.parseInt(mChildStudentId.getText().toString());
+                    int mSportsManAge = Integer.parseInt(mChildStudentId.getText().toString());
 
 //
 //                    String mSportName2 = mSprotName2.getText().toString();
 //
 //                    String mAchievement = mAchievement2.getText().toString();
 
-
-
-                   Sports mFirstSport = new Sports(mSportName, mSportAchievement,mSportsManAge);
-mStudentPresenter.addSportsRecord(mFirstSport,null);
-               // Sports mSecondSport =    new Sports(mSportName2, mAchievement);
-
-
-
-
-                }
-
-
-        );
+                    Sports mFirstSport = new Sports(mSportName, mSportAchievement, mSportsManAge);
+                    mStudentPresenter.addSportsRecord(mFirstSport, null);
+                    // Sports mSecondSport =    new Sports(mSportName2, mAchievement);
+                });
     }
-
 
     private List<Student> getStudentListData() {
         return mStudentPresenter.getStudentList();
     }
-
-
 }

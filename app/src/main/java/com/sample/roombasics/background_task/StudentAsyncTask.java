@@ -11,42 +11,28 @@ import java.util.List;
 
 // studentList AsyncTask
 public class StudentAsyncTask extends AsyncTask<Void, Void, List<Student>> {
-
-
     private List<Student> students;
     private Context mContext;
-
+    AsyncResponse delegate;
 
     public interface AsyncResponse {
         void processFinish(List<Student> mStudentList);
-
     }
-
-
-    public AsyncResponse delegate = null;
 
     public StudentAsyncTask(Context mContext, AsyncResponse delegate) {
         this.mContext = mContext;
-
         this.delegate = delegate;
     }
 
     @Override
     protected void onPostExecute(List<Student> students) {
         super.onPostExecute(students);
-
         this.students = students;
-
         delegate.processFinish(students);
     }
 
     @Override
     protected List<Student> doInBackground(Void... voids) {
-
         return StudentSingleton.getmStudentRoomInstance(mContext).getStudentDao().getAllStudentList();
-
-
     }
-
-
 }

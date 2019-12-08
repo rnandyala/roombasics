@@ -16,16 +16,12 @@ public class StudentSingleton {
 
     public static StudentRoomInstace getmStudentRoomInstance(Context mContext) {
 
-
         if (mStudentRoomInstance == null) {
-
             mStudentRoomInstance = Room.databaseBuilder(
                     mContext,
                     StudentRoomInstace.class,
                     STUDENT_DB_NAME
             ).build();
-
-
         }
         return mStudentRoomInstance;
     }
